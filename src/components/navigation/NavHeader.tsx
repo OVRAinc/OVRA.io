@@ -30,7 +30,7 @@ export default function NavHeader() {
 			{/* Menu items */}
 			<div className="flex no-wrap gap-x-16 pr-24">
 				{menuItems.map((item) => (
-					<NavBlock name={item.name} route={item.link} />
+					<NavBlock name={item.name} route={item.link} key={item.link} />
 				))}
 			</div>
 		</header>

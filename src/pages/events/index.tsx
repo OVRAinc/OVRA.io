@@ -6,18 +6,21 @@ import Image from "next/image";
 export default function EventPage() {
 	const currentEvents = [
 		{
+			id: 0,
 			title: "VR/AR in Education",
 			date: "2021-10-01",
 			description:
 				"A conference for educators to learn about VR/AR in the classroom.",
 		},
 		{
+			id: 1,
 			title: "VR/AR in Education",
 			date: "2021-10-01",
 			description:
 				"A conference for educators to learn about VR/AR in the classroom.",
 		},
 		{
+			id: 2,
 			title: "VR/AR in Education",
 			date: "2021-10-01",
 			description:
@@ -49,7 +52,7 @@ export default function EventPage() {
 					<div className="relative">
 						<div className="absolute flex flex-col gap-y-8">
 							{currentEvents.map((event) => (
-								<EventCard event={event} />
+								<EventCard event={event} key={event.id}/>
 							))}
 						</div>
 						<Image

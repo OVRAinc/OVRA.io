@@ -42,7 +42,7 @@ export default function TeamPage() {
 					<div className="flex justify-center items-center mt-20">
 						<div className="grid grid-cols-2 gap-24">
 							{TeamList.map((teamMember) => (
-								<TeamCard member={teamMember} />
+								<TeamCard member={teamMember} key={teamMember.email}/>
 							))}
 						</div>
 					</div>
