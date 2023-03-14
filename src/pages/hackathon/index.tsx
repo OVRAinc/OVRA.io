@@ -27,10 +27,10 @@ export default function HackathonPage() {
 
         <section className="flex justify-center items-center w-full">
           <div>
-            <h1 className="text-6xl text-white font-bold uppercase text-center w-[60rem]">
+            <h1 className="text-6xl text-white font-bold uppercase text-center max-w-[60rem]">
               Presenting OVRA&apos;s Reality Rush Hackathon
             </h1>
-            <div className="text-lg text-center">
+            <div className="text-2xl text-center">
               The First Web-Based VR Hackathon
             </div>
           </div>
@@ -38,10 +38,10 @@ export default function HackathonPage() {
         <section className="flex justify-center items-center w-full">
           <div>
             <h2 className="text-3xl text-center font-bold">Our Sponsors</h2>
-            <div className="py-16 flex justify-center items-center gap-x-16">
+            <div className="py-16 flex flex-wrap justify-center items-center gap-x-16 gap-y-8">
               {sponsorsList.map((sponsor) => (
-                <div className="relative" key={sponsor.name}>
-                  <div className="absolute flex justify-center items-center w-full h-full text-5xl uppercase z-[2]">
+                <div className="relative min-w-[12rem]" key={sponsor.name}>
+                  <div className="absolute flex justify-center items-center w-full h-full text-5xl uppercase z-[2] font-bold">
                     {sponsor.name}
                   </div>
                   <div className="absolute h-full w-full bg-black opacity-70 z-[1]" />
