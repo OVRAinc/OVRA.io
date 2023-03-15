@@ -57,6 +57,7 @@ export default function AboutPage() {
 							<div className="grid grid-cols-2 gap-8">
 								{photoList.map((photo, i) => (
 									<Image
+										key={photo}
 										src={`/about/${photo}`}
 										width={350}
 										height={250}
@@ -70,7 +71,7 @@ export default function AboutPage() {
 								</h2>
 								<div className="flex flex-col gap-y-10">
 									{actionList.map((action) => (
-										<div>
+										<div key={action.head}>
 											<h3 className="text-4xl font-bold">{action.head}</h3>
 											<div className="text-xl text-grey py-2 whitespace-pre-line">
 												{action.description}

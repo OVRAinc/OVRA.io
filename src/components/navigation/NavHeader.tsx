@@ -63,6 +63,7 @@ export default function NavHeader() {
 				<div>
 					{menuItems.map((menu) => (
 						<Link
+							key={menu.link}
 							href={menu.link}
 							className={`${
 								windowSize < 640 ? "text-black" : "text-white"

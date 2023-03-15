@@ -50,7 +50,8 @@ export default function ContactPage() {
 						className="flex justify-center items-center gap-x-16 mt-20"
 					>
 						{contactList.map((contact) => (
-							<a href={`mailto:${contact.email}`}>
+							// TODO @sam: change key iterator to email once we have it
+							<a href={`mailto:${contact.email}`} key={contact.name}>
 								<Image
 									className="rounded-[16rem]"
 									src={contact.imgUrl}
