@@ -1,5 +1,8 @@
 import EventCard from "@/components/cards/EventCard";
 import NavHeader from "@/components/navigation/NavHeader";
+import PageHeader from "@/components/text/PageHeader";
+import { fadeInUp, stagger } from "@/utils/animate";
+import { motion } from "framer-motion";
 import Head from "next/head";
 import Image from "next/image";
 
@@ -27,6 +30,11 @@ export default function EventPage() {
 				"A conference for educators to learn about VR/AR in the classroom.",
 		},
 	];
+	const pageData = {
+		title: "Events",
+		description:
+			" Connect and engage with members in the virtual reality community through a variety of events, including workshops, meetups, and networking opportunities.",
+	};
 	return (
 		<>
 			<Head>
@@ -34,35 +42,26 @@ export default function EventPage() {
 			</Head>
 			<main>
 				<NavHeader />
-				<section className="flex justify-center items-center gap-x-24 mt-20">
+				<motion.section
+					initial="initial"
+					animate="animate"
+					variants={stagger}
+					className="mx-16"
+				>
 					<div>
-						<h1 className="text-8xl font-bold">Events</h1>
-						<div className="text-lg w-[40rem] pt-4">
-							Welcome to the events section of the Ontario Virtual Reality
-							Association (OVRA). Our goal is to connect and engage members of
-							the virtual reality community through a variety of events,
-							including workshops, meetups, and networking opportunities. We
-							strive to provide a platform for our members to learn from
-							industry leaders, share their knowledge and experiences, and
-							collaborate on projects. Keep an eye on this page for updates on
-							upcoming events and to register for our next event. We look
-							forward to connecting with you!
-						</div>
-					</div>
-					<div className="relative">
-						<div className="absolute flex flex-col gap-y-8">
-							{currentEvents.map((event) => (
-								<EventCard event={event} key={event.id}/>
-							))}
-						</div>
-						<Image
-							src="/green_blob.png"
-							alt="OVRA Logo"
-							width={500}
-							height={100}
+						<PageHeader
+							title={pageData.title}
+							description={pageData.description}
 						/>
 					</div>
-				</section>
+					<motion.div variants={fadeInUp} className="relative mt-16">
+						<div className="absolute flex flex-col gap-y-8">
+							{currentEvents.map((event) => (
+								<EventCard event={event} key={event.id} />
+							))}
+						</div>
+					</motion.div>
+				</motion.section>
 			</main>
 		</>
 	);

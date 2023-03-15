@@ -10,8 +10,14 @@ module.exports = {
 	],
 	theme: {
 		extend: {
+			textColor: {
+				white: "#F0EDE1",
+				grey: "#7a7971",
+				black: "#1d181a",
+			},
 			backgroundColor: {
 				"purple-tint": "#100E2C",
+				white: "#F0EDE1",
 			},
 		},
 	},

@@ -1,6 +1,10 @@
 import Head from "next/head";
 import Image from "next/image";
 import NavHeader from "@/components/navigation/NavHeader";
+import Link from "next/link";
+import { motion } from "framer-motion";
+
+import { fadeInUp, stagger } from "@/utils/animate";
 
 export default function Home() {
 	return (
@@ -14,33 +18,50 @@ export default function Home() {
 			<main>
 				<NavHeader />
 				{/* Hero */}
-				<section className="flex justify-center items-center gap-x-24 mt-20">
-					<div>
-						<h1 className="text-8xl font-bold">OVRA</h1>
-						<h2 className="text-4xl">The next step in virtual reality</h2>
-						<div className="text-lg w-96 pt-4">
+				<motion.section
+					className="flex justify-center items-center gap-x-40 mt-10"
+					initial="initial"
+					animate="animate"
+					variants={stagger}
+				>
+					<div className="flex flex-col gap-y-8 min-w-[22rem]">
+						<div>
+							<motion.h1 className="text-9xl font-bold" variants={fadeInUp}>
+								OVRA
+							</motion.h1>
+							<motion.h2 className="text-4xl uppercase" variants={fadeInUp}>
+								The next step in virtual reality
+							</motion.h2>
+						</div>
+						{/* <div className="text-lg w-96 pt-4">
 							The Ontario Virtual Reality Association (OVRA) is a non-profit
 							organization that promotes the use of virtual reality (VR)
 							technology in Ontario, Canada.
-						</div>
-						<div className="flex gap-x-4 mt-4">
-							<button className="bg-white text-black font-bold py-2 px-10 rounded">
-								Learn more
-							</button>
-							<button className="bg-white text-black font-bold py-2 px-10 rounded">
-								Contact us
-							</button>
-						</div>
+						</div> */}
+						<motion.div className="flex gap-x-4 mt-4" variants={fadeInUp}>
+							<Link
+								href="/hackathon"
+								className="bg-white text-black font-bold py-4 px-6"
+							>
+								OUR HACKATHON
+							</Link>
+							<Link
+								href="/about"
+								className="text-white font-bold py-4 px-6 hover:underline"
+							>
+								LEARN MORE
+							</Link>
+						</motion.div>
 					</div>
-					<div>
+					<motion.div className="min-w-[15rem]" variants={fadeInUp}>
 						<Image
-							src="/landing/hero.png"
+							src="/landing/hero1.png"
 							alt="OVRA Logo"
 							width={500}
 							height={100}
 						/>
-					</div>
-				</section>
+					</motion.div>
+				</motion.section>
 			</main>
 		</>
 	);
