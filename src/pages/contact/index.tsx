@@ -47,11 +47,10 @@ export default function ContactPage() {
 					</motion.div>
 					<motion.div
 						variants={fadeInUp}
-						className="flex justify-center items-center gap-x-16 mt-20"
+						className="grid grid-cols-1 md:grid-cols-2 justify-items-center mx-40 mt-20"
 					>
 						{contactList.map((contact) => (
-							// TODO @sam: change key iterator to email once we have it
-							<a href={`mailto:${contact.email}`} key={contact.name}>
+							<div key={contact.email}>
 								<Image
 									className="rounded-[16rem]"
 									src={contact.imgUrl}
@@ -63,13 +62,16 @@ export default function ContactPage() {
 									<h2 className="text-4xl font-bold text-white">
 										{contact.name}
 									</h2>
-									<div className="text-lg">{contact.role}</div>
-									<div className="text-lg">{contact.email}</div>
-									<button className="w-full py-2 my-8 font-bold text-xl light-button">
+									<div className="text-xl">{contact.role}</div>
+									<div className="text-xl">{contact.email}</div>
+									<a
+										href={`mailto:${contact.email}`}
+										className="w-full py-2 my-8 font-bold text-3xl md:text-xl light-button"
+									>
 										CONTACT
-									</button>
+									</a>
 								</div>
-							</a>
+							</div>
 						))}
 					</motion.div>
 				</motion.section>
