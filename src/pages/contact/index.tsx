@@ -9,13 +9,13 @@ export default function ContactPage() {
 		{
 			name: "Adil Hashmi",
 			role: "Co-Founder",
-			email: "TBD -- Email",
+			email: "adilhashmi.w@gmail.com",
 			imgUrl: "/contact/adil.png",
 		},
 		{
 			name: "Zeeshan Jafri",
 			role: "Co-Founder",
-			email: "TBD -- Email",
+			email: "zeeshanj@live.com",
 			imgUrl: "/contact/zeeshan.png",
 		},
 	];
